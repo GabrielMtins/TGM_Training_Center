@@ -22,7 +22,7 @@ void init(){
     WINDOW_WIDTH = dm.w;
     WINDOW_HEIGHT = dm.h;
     TILE_SIZE = WINDOW_HEIGHT/9;
-    window = SDL_CreateWindow("Mode7 Game", 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_FULLSCREEN);
+    window = SDL_CreateWindow("The Great Machine Training Center", 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_FULLSCREEN);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     mainMenu = menu_create();
     mainPlayer = NULL;

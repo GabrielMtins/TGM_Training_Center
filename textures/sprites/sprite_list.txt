@@ -1,0 +1,4 @@
+3
+textures/sprites/palmtree.png 1 1.37
+textures/sprites/tree.png 1 1.5
+textures/sprites/tree_n.png 1 1.5
