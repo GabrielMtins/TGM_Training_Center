@@ -29,11 +29,12 @@ mode7_camera* mode7_createCamera(char* plane_surface_name){
     camera->y = 5;
     camera->direction = PI/32;
     camera->scale = 32;
-    SDL_Surface* plane_surface = IMG_Load(plane_surface_name);
+
     camera->draw_surface = SDL_CreateRGBSurface(0, MODE7_WIDTH, MODE7_HEIGHT, 32, 0, 0, 0, 0);
-    camera->width = plane_surface->w;
-    camera->height = plane_surface->h;
+    camera->width = LEVEL_WIDTH;
+    camera->height = LEVEL_HEIGHT;
     camera->plane_buffer = malloc(3*camera->width*camera->height);
+    SDL_Surface* plane_surface = IMG_Load(plane_surface_name);
     for(int i = 0; i < camera->width; i++){
         for(int j = 0; j < camera->height; j++){
             uint32_t* pixels = plane_surface->pixels;

@@ -5,6 +5,8 @@
 
 #define MODE7_WIDTH 854
 #define MODE7_HEIGHT 240
+#define LEVEL_WIDTH 4096
+#define LEVEL_HEIGHT 2048
 
 // rendering in 480p (854 x 480) for better fps
 // if you are reading the source code (for some reason??) you

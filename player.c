@@ -20,13 +20,13 @@ void player_loadHighScores(char* filename){
         high_score[0] = high_score[1] = high_score[2] = high_score[3] = 999;
         return;
     }
-    fread(high_score, sizeof(double), 4*sizeof(double), file);
+    fread(high_score, sizeof(double), 4, file);
     fclose(file);
 }
 
 void player_saveHighScores(char* filename){
     FILE* file = fopen(filename, "wb");
-    fwrite(high_score, sizeof(double), 4*sizeof(double), file);
+    fwrite(high_score, sizeof(double), 4, file);
     fclose(file);
 }
 
