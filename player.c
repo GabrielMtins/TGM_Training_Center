@@ -117,12 +117,24 @@ void player_input(player* p){
         }
 
         if(currentKeyState[SDL_SCANCODE_A]){
-            p->accx += 1.5*PLAYER_ACCELERATION*cos(p->direction+PI/2);
-            p->accy += 1.5*PLAYER_ACCELERATION*sin(p->direction+PI/2);
+            if(p->vx*p->vx+p->vy*p->vy > (double)PLAYER_VELOCITY*PLAYER_VELOCITY/100){
+                p->accx += 1.5*PLAYER_ACCELERATION*cos(p->direction+PI/2);
+                p->accy += 1.5*PLAYER_ACCELERATION*sin(p->direction+PI/2);
+            }
+            else{
+                p->accx += 0.075*PLAYER_ACCELERATION*cos(p->direction+PI/2);
+                p->accy += 0.075*PLAYER_ACCELERATION*sin(p->direction+PI/2);
+            }
         }
         if(currentKeyState[SDL_SCANCODE_D]){
-            p->accx += 1.5*PLAYER_ACCELERATION*cos(p->direction-PI/2);
-            p->accy += 1.5*PLAYER_ACCELERATION*sin(p->direction-PI/2);
+            if(p->vx*p->vx+p->vy*p->vy > (double)PLAYER_VELOCITY*PLAYER_VELOCITY/100){
+                p->accx += 1.5*PLAYER_ACCELERATION*cos(p->direction-PI/2);
+                p->accy += 1.5*PLAYER_ACCELERATION*sin(p->direction-PI/2);
+            }
+            else{
+                p->accx += 0.075*PLAYER_ACCELERATION*cos(p->direction-PI/2);
+                p->accy += 0.075*PLAYER_ACCELERATION*sin(p->direction-PI/2);
+            }
         }
         if(currentKeyState[SDL_SCANCODE_ESCAPE]){
             p->fuel = 0;

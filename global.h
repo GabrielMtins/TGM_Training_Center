@@ -2,8 +2,8 @@
 #define GLOBAL_H
 
 
-#include <SDL.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 extern int WINDOW_WIDTH;
 extern int WINDOW_HEIGHT;
