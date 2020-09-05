@@ -40,9 +40,15 @@ void menu_update(menu* t){
             t->current_state = LEVEL_SELECT_SCREEN;
         }
         SDL_Rect htp_button = {5.9*TILE_SIZE, 5.98*TILE_SIZE, 4.2*TILE_SIZE, 0.80*TILE_SIZE};
-        if(menu_isMouseInsideRect(htp_button)) t->current_state = HTP_SCREEN;
+        if(menu_isMouseInsideRect(htp_button)){
+            t->current_state = HTP_SCREEN;
+        }
         SDL_Rect story_button = {6.76*TILE_SIZE, 6.975*TILE_SIZE, 2.55*TILE_SIZE, 0.825*TILE_SIZE};
-        if(menu_isMouseInsideRect(story_button)) t->current_state = STORY_SCREEN;
+        if(menu_isMouseInsideRect(story_button)){
+            t->current_state = STORY_SCREEN;
+        }
+        SDL_Rect quit_button = {7.125*TILE_SIZE, 8*TILE_SIZE, 1.76*TILE_SIZE, 0.78*TILE_SIZE};
+        if(menu_isMouseInsideRect(quit_button)) quit = 1;
     }
     if(t->current_state == LEVEL_SELECT_SCREEN){
         if(SDL_GetMouseState(NULL, NULL)&SDL_BUTTON(SDL_BUTTON_RIGHT)) t->current_state = TITLE_SCREEN;

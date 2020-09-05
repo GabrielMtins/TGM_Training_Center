@@ -11,6 +11,7 @@
 menu* mainMenu;
 player* mainPlayer = NULL;
 sprite_profile* allSpriteProfiles = NULL;
+int quit = 0;
 
 void init(){
     SDL_Init(SDL_INIT_VIDEO);
@@ -59,7 +60,6 @@ void game_render(){
 }
 
 void game_loop(){
-    int quit = 0;
     SDL_Event e;
     Uint32 firstTime;
     while(!quit){
@@ -82,6 +82,8 @@ void game_close(){
     if(mainPlayer != NULL) player_destroy(mainPlayer);
     hud_destroy();
     sprite_destroyProfiles();
+    IMG_Quit();
+    SDL_Quit();
     return;
 }
 

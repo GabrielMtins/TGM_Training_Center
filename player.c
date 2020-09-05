@@ -115,7 +115,6 @@ void player_input(player* p){
                 p->accy+=-sin(p->direction)*PLAYER_ACCELERATION/4;
             }
         }
-
         if(currentKeyState[SDL_SCANCODE_A]){
             if(p->vx*p->vx+p->vy*p->vy > (double)PLAYER_VELOCITY*PLAYER_VELOCITY/100){
                 p->accx += 1.5*PLAYER_ACCELERATION*cos(p->direction+PI/2);
@@ -159,9 +158,9 @@ void player_update(player* p){
         p->vx = PLAYER_VELOCITY*cos(p->direction);
         p->vy = PLAYER_VELOCITY*sin(p->direction);
     }
-    if(p->vx*p->vx + p->vy*p->vy < (double)PLAYER_VELOCITY*PLAYER_VELOCITY/10000){
-        p->vx = PLAYER_VELOCITY*cos(p->direction)/100;
-        p->vy = PLAYER_VELOCITY*sin(p->direction)/100;
+    if(p->vx*p->vx + p->vy*p->vy < (double)PLAYER_VELOCITY*PLAYER_VELOCITY/900){
+        p->vx = PLAYER_VELOCITY*cos(p->direction)/30;
+        p->vy = PLAYER_VELOCITY*sin(p->direction)/30;
     }
     p->x+=p->vx*deltaTime;
     {
